@@ -14,15 +14,17 @@ const IndexPage = () => {
       <Layout>
         <header className='header'>
             <Row>
-                <Col xs={6} as='h1' className='header__text'>
-                    <div title='Usługi'>
-                        <span>Usługi</span>
-                    </div>
-                    <div title='PPOŻ'>
-                        <span>PPOŻ</span>
-                    </div>
-                    <div title='i BHP'>
-                        <span>i BHP</span>
+                <Col xs={6} as='h1' className='header__text-wrap'>
+                    <div className='header__text'>
+                        <div title='Usługi'>
+                            <span>Usługi</span>
+                        </div>
+                        <div title='PPOŻ'>
+                            <span>PPOŻ</span>
+                        </div>
+                        <div title='i BHP'>
+                            <span>i BHP</span>
+                        </div>
                     </div>
                 </Col>
                 <Col className='images' xs={6}>
