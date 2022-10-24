@@ -1,1 +1,16 @@
 @import '../../styles/main';
+
+.navbar {
+  padding: 85px 80px 0 80px;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-item {
+  color: $black-color;
+  font-size: $font-size-sm;
+  line-height: 24px;
+  padding: 13px 36.5px;
+}
