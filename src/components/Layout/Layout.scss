@@ -14,3 +14,34 @@
   line-height: 24px;
   padding: 13px 36.5px;
 }
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 96px 80px;
+  color: $white-color;
+  background-color: $black-color;
+
+  &__list {
+    padding-left: 73px;
+
+    li {
+      font-size: $font-size-sm;
+      line-height: 23.4px;
+    }
+  }
+
+  &__navbar {
+    padding-left: 0;
+    padding-top: 40px;
+    padding-right: 0;
+
+    .navbar-nav {
+      margin: 0;
+    }
+
+    .nav-item {
+      color: $white-color;
+    }
+  }
+}

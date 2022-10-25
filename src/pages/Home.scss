@@ -1,16 +1,25 @@
 @import "../styles/variables";
 
+.red-btn {
+  padding: 13px 36.5px;
+  background-color: $red-color;
+  font-size: $font-size-sm;
+  color: $white-color;
+}
+
+$section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
+
 .header {
   position: relative;
   margin-top: 225px;
-  min-height: 620px;
-  max-height: 620px;
+  min-height: $section-with-bg-height;
+  max-height: $section-with-bg-height;
   background-color: $black-color;
   padding-left: 64px;
 
   &__text-wrap {
-    min-height: 620px;
-    max-height: 620px;
+    min-height: $section-with-bg-height;
+    max-height: $section-with-bg-height;
     overflow: hidden;
     padding: 0;
   }
@@ -43,7 +52,6 @@
   }
 
   // Images
-
   .images {
     position: relative;
     padding: 0;
@@ -84,20 +92,15 @@
     line-height: 41.6px;
     font-weight: 400;
   }
-
-  &__btn {
-    outline: none;
-    background-color: transparent;
-    border: none;
-  }
 }
 
 .services {
   position: relative;
   background-color: $red-color;
-  min-height: 620px;
-  max-height: 620px;
+  min-height: $section-with-bg-height;
+  max-height: $section-with-bg-height;
   padding-left: 64px;
+  margin-top: 200px;
 
   &__text {
     position: relative;
@@ -113,8 +116,8 @@
   }
 
   &__text-wrap {
-    min-height: 620px;
-    max-height: 620px;
+    min-height: $section-with-bg-height;
+    max-height: $section-with-bg-height;
     overflow: hidden;
     padding: 0;
   }
@@ -130,6 +133,117 @@
 
     .header__text {
       color: $red-color;
+    }
+  }
+
+  &__list {
+    padding-top: 85px;
+  }
+}
+
+.service {
+  color: $white-color;
+
+  &:not(:last-of-type) {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: $font-size-lg;
+  }
+
+  &__content {
+    font-size: $font-size-sm;
+  }
+}
+
+.about {
+  padding-top: 200px;
+
+  img {
+    @media (min-width: $lg){
+      height: 100%;
+    }
+  }
+
+  &__text {
+    color: $black-color;
+  }
+
+  &__heading {
+    font-size: $font-size-title;
+  }
+
+  &__paragraph {
+    font-size: $font-size-sm;
+    max-width: 700px;
+    line-height: 23.4px;
+    text-align: left;
+
+    padding-bottom: 16px;
+
+    &:last-of-type {
+      padding-bottom: 32px;
+    }
+  }
+}
+
+.contact {
+  position: relative;
+  background-color: $red-color;
+  margin-top: 400px;
+  margin-bottom: 170px;
+  padding: 85px 50px;
+
+  @media (min-width: $xl){
+    padding: 85px 70px;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: -85px;
+    right: 0;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-title;
+    line-height: 254.8px;
+    font-weight: 700;
+    color: $white-color;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    max-width: 780px;
+    color: $white-color;
+  }
+
+  &__info {
+    font-size: $font-size-md;
+    font-weight: 400;
+    line-height: 43.2px;
+    padding-bottom: 24px;
+  }
+
+  &__anchor {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-md;
+    font-weight: 700;
+
+    img {
+      width: 22px;
+      height: 22px;
+      margin-right: 14px;
+    }
+
+    &:first-of-type {
+      padding-bottom: 14px;
     }
   }
 }
