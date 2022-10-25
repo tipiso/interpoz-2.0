@@ -12,13 +12,15 @@
     min-height: 620px;
     max-height: 620px;
     overflow: hidden;
+    padding: 0;
   }
 
   &--background {
     position: absolute;
+    padding-left: 64px;
     left: 0;
     right: 0;
-    top: 135px;
+    top: 0;
     z-index: 0;
     overflow: visible;
 
@@ -44,10 +46,90 @@
 
   .images {
     position: relative;
+    padding: 0;
     z-index: 1;
+  }
 
-    img {
-      position: absolute;
+  .image {
+    position: absolute;
+
+    &--red-sign {
+      z-index: 3;
+      top: 25px;
+      left: 275px;
+    }
+
+    &--green-sign {
+      z-index: 3;
+      top: 50%;
+      left: -100px;
+      transform: translateY(-50%);
+    }
+
+    &--extinguisher-sign {
+      z-index: 4;
+      top: -160px;
+    }
+  }
+}
+
+.subheading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 80px 80px;
+
+  &__text {
+    font-size: $font-size-lg;
+    line-height: 41.6px;
+    font-weight: 400;
+  }
+
+  &__btn {
+    outline: none;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.services {
+  position: relative;
+  background-color: $red-color;
+  min-height: 620px;
+  max-height: 620px;
+  padding-left: 64px;
+
+  &__text {
+    position: relative;
+    top: -104px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size-title;
+    color: $white-color;
+    line-height: 265px;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  &__text-wrap {
+    min-height: 620px;
+    max-height: 620px;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  &--background {
+    position: absolute;
+    padding-left: 64px;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    overflow: visible;
+
+    .header__text {
+      color: $red-color;
     }
   }
 }
