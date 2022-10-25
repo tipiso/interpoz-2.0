@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Col from "react-bootstrap/Col";
 import {Collapse, Row} from "react-bootstrap";
 
@@ -17,6 +17,8 @@ import "./Home.scss";
 
 const IndexPage = () => {
     const [openedCollapse, setOpenedCollapse] = useState({});
+    const aboutRef = useRef(null);
+    const contactRef = useRef(null);
 
     const toggleCollapse = (uniqueKey) => {
         if(!openedCollapse[uniqueKey]) {
@@ -26,8 +28,16 @@ const IndexPage = () => {
         }
     }
 
+    const scrollToContact = () => {
+        contactRef.current.scrollIntoView();
+    }
+
+    const scrollToAbout = () => {
+        aboutRef.current.scrollIntoView();
+    }
+
   return (
-      <Layout>
+      <Layout scrollToContact={scrollToContact} scrollToAbout={scrollToAbout}>
             <Row as='header' className='header'>
                 <Col xs={6} as='h1' className='header__text-wrap'>
                     <div className='header__text'>
@@ -90,7 +100,7 @@ const IndexPage = () => {
               </Col>
           </Row>
 
-          <Row className='about' as='section'>
+          <Row ref={aboutRef} className='about' as='section'>
               <Col className='ps-0' xs={6}>
                   <img src={ExtinguisherOnWall} alt='extinguisher on wall' />
               </Col>
@@ -103,7 +113,7 @@ const IndexPage = () => {
               </Col>
           </Row>
 
-          <Row as='section' className='contact'>
+          <Row ref={contactRef} as='section' className='contact'>
               <Col className='contact__heading' xs={6} as='h5'>Kontakt</Col>
               <Col className='contact__content' xs={6}>
                   <div className='d-flex flex-column'>

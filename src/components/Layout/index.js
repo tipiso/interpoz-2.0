@@ -1,5 +1,5 @@
 import * as React from "react";
-import Row from 'react-bootstrap/Row';
+import { useRef } from 'react';
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -12,7 +12,7 @@ import FooterLogo from "../../images/footer-logo.svg";
 
 import "./Layout.scss";
 
-export default function Layout({ children }) {
+export default function Layout({ children, scrollToAbout, scrollToContact }) {
     return (
         <div>
             <Navbar>
@@ -20,8 +20,8 @@ export default function Layout({ children }) {
                     <img src={Logo} alt='Logo icon' />
                 </NavbarBrand>
                 <Nav navbar>
-                    <NavItem>O firmie</NavItem>
-                    <NavItem>Kontakt</NavItem>
+                    <NavItem onClick={scrollToAbout}>O firmie</NavItem>
+                    <NavItem onClick={scrollToContact}>Kontakt</NavItem>
                     <NavItem as='button' className='red-btn'>Oferta</NavItem>
                 </Nav>
             </Navbar>
@@ -42,8 +42,8 @@ export default function Layout({ children }) {
                 <Col xs={6}>
                     <Navbar className='footer__navbar'>
                         <Nav navbar>
-                            <NavItem>O firmie</NavItem>
-                            <NavItem>Kontakt</NavItem>
+                            <NavItem onClick={scrollToAbout}>O firmie</NavItem>
+                            <NavItem onClick={scrollToContact}>Kontakt</NavItem>
                             <NavItem>Oferta</NavItem>
                         </Nav>
                     </Navbar>
