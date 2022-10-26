@@ -8,7 +8,7 @@
 }
 
 @mixin bgHeadingText($bgTextColor, $headingColor){
-  $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
+  $section-with-bg-height: clamp(600px, calc(45vw - 65px), 620px);
   $mobile-section-with-bg-height: clamp(300px, calc(45vw - 130px), 420px);
 
   padding-left: 24px;

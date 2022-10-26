@@ -12,6 +12,7 @@ import { returnElVariants } from "../../constants/constants";
 import Logo from '../../images/logo.svg';
 import MobileLogo from "../../images/mobile-top-logo.svg"
 import FooterLogo from "../../images/footer-logo.svg";
+import Offer from "../../images/offer.pdf"
 
 import "./Layout.scss";
 
@@ -42,7 +43,7 @@ export default function Layout({ children, scrollToAbout, scrollToContact }) {
                 <Nav className='d-none d-lg-flex' navbar>
                     <NavItem as='button' onClick={scrollToAbout}>O firmie</NavItem>
                     <NavItem as='button' onClick={scrollToContact}>Kontakt</NavItem>
-                    <NavItem as='button' className='red-btn'>Oferta</NavItem>
+                    <NavItem as='a' href={Offer} target="_blank" rel='noreferrer' className='red-btn'>Oferta</NavItem>
                 </Nav>
             </Navbar>
 
@@ -64,7 +65,7 @@ export default function Layout({ children, scrollToAbout, scrollToContact }) {
                         <Nav navbar>
                             <NavItem as='button' onClick={scrollToAbout}>O firmie</NavItem>
                             <NavItem as='button' onClick={scrollToContact}>Kontakt</NavItem>
-                            <NavItem as='button'>Oferta</NavItem>
+                            <NavItem as='a' href={Offer} target="_blank" rel='noreferrer'>Oferta</NavItem>
                         </Nav>
                     </Navbar>
                 </Col>
