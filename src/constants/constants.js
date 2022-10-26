@@ -21,4 +21,14 @@ const services = [
     }
 ];
 
-export { services };
+const transition = {
+    duration: 1.5,
+    ease: [0.43, 0.13, 0.23, 0.96],
+};
+
+const returnElVariants = {
+    exit: { opacity: 0, y: 50, transition },
+    enter: { opacity: 1, y: 0, transition },
+};
+
+export { services, returnElVariants };

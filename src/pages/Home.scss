@@ -1,4 +1,6 @@
 @import "../styles/variables";
+@import "../styles/animations";
+@import "../styles/mixins";
 
 .red-btn {
   padding: 13px 36.5px;
@@ -7,48 +9,15 @@
   color: $white-color;
 }
 
-$section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
-
 .header {
   position: relative;
-  margin-top: 225px;
-  min-height: $section-with-bg-height;
-  max-height: $section-with-bg-height;
+  margin-top: 92px;
   background-color: $black-color;
-  padding-left: 64px;
 
-  &__text-wrap {
-    min-height: $section-with-bg-height;
-    max-height: $section-with-bg-height;
-    overflow: hidden;
-    padding: 0;
-  }
+  @include bgHeadingText($black-color, $white-color);
 
-  &--background {
-    position: absolute;
-    padding-left: 64px;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 0;
-    overflow: visible;
-
-    .header__text {
-      color: $black-color;
-    }
-  }
-
-  &__text {
-    position: relative;
-    top: -104px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    font-size: $font-size-title;
-    color: $white-color;
-    line-height: 265px;
-    margin: 0;
-    font-weight: 500;
+  @media (min-width: $lg){
+    margin-top: 225px;
   }
 
   // Images
@@ -63,8 +32,16 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
 
     &--red-sign {
       z-index: 3;
-      top: 25px;
-      left: 275px;
+      width: 80%;
+      top: -40px;
+      left: 50px;
+      @include imgAnimation(floatImgRight);
+
+      @media (min-width: $lg){
+        width: auto;
+        top: 25px;
+        left: 275px;
+      }
     }
 
     &--green-sign {
@@ -72,11 +49,14 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
       top: 50%;
       left: -100px;
       transform: translateY(-50%);
+      @include imgAnimation(floatImgLeft);
     }
 
     &--extinguisher-sign {
       z-index: 4;
       top: -160px;
+      @include imgAnimation(floatImgUp);
+      animation-direction: alternate-reverse;
     }
   }
 }
@@ -85,7 +65,12 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 80px 80px;
+  flex-wrap: wrap;
+  padding: 50px 24px 80px 24px;
+
+  @media (min-width: $lg){
+    padding: 80px 80px 80px;
+  }
 
   &__text {
     font-size: $font-size-lg;
@@ -94,50 +79,53 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
   }
 }
 
+.scroll-down {
+  position: relative;
+  margin-left: auto;
+
+  &__dot {
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+
+    animation: pulse 3s infinite, slideDown 3s alternate infinite;
+  }
+}
+
 .services {
   position: relative;
   background-color: $red-color;
-  min-height: $section-with-bg-height;
-  max-height: $section-with-bg-height;
-  padding-left: 64px;
-  margin-top: 200px;
 
-  &__text {
-    position: relative;
-    top: -104px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    font-size: $font-size-title;
-    color: $white-color;
-    line-height: 265px;
-    margin: 0;
-    font-weight: 500;
-  }
+  @include bgHeadingText($red-color, $white-color);
 
-  &__text-wrap {
-    min-height: $section-with-bg-height;
-    max-height: $section-with-bg-height;
-    overflow: hidden;
-    padding: 0;
-  }
+  @media (min-width: $xs) {
+    max-height: unset;
+    min-height: unset;
 
-  &--background {
-    position: absolute;
-    padding-left: 64px;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 0;
-    overflow: visible;
+    &__text-wrap {
+      max-height: unset;
+      min-height: unset;
+    }
 
-    .header__text {
-      color: $red-color;
+    &__text {
+      max-height: unset;
+      min-height: unset;
     }
   }
 
+  @media (min-width: $lg){
+    margin-top: 200px;
+    @include bgHeadingText($red-color, $white-color);
+  }
+
   &__list {
-    padding-top: 85px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @media (min-width: $lg){
+      padding-top: 85px;
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -160,9 +148,13 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
 }
 
 .about {
-  padding-top: 200px;
+  @media (min-width: $lg){
+    padding-top: 200px;
+  }
 
   img {
+    width: 100%;
+
     @media (min-width: $lg){
       height: 100%;
     }
@@ -170,6 +162,11 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
 
   &__text {
     color: $black-color;
+    padding: 60px 24px;
+
+    @media (min-width: $lg) {
+      padding: 0 16px;
+    }
   }
 
   &__heading {
@@ -193,9 +190,14 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
 .contact {
   position: relative;
   background-color: $red-color;
-  margin-top: 400px;
-  margin-bottom: 170px;
-  padding: 85px 50px;
+  padding: 24px 24px 50px 24px;
+  margin-bottom: 60px;
+
+  @media(min-width: $lg) {
+    margin-top: 400px;
+    margin-bottom: 170px;
+    padding: 85px 50px;
+  }
 
   @media (min-width: $xl){
     padding: 85px 70px;
@@ -211,9 +213,12 @@ $section-with-bg-height: clamp(600px, calc(50vw - 65px), 620px);
     display: flex;
     align-items: center;
     font-size: $font-size-title;
-    line-height: 254.8px;
-    font-weight: 700;
     color: $white-color;
+    font-weight: 700;
+
+    @media (min-width: $lg) {
+      line-height: 254.8px;
+    }
   }
 
   &__content {

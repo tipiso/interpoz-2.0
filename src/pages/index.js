@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useRef } from "react";
 import Col from "react-bootstrap/Col";
-import {Collapse, Row} from "react-bootstrap";
+import { Collapse, Row } from "react-bootstrap";
 
 import Layout from "../components/Layout";
 import Extinguisher from '../images/extinguisher-img.png';
@@ -11,7 +11,9 @@ import ScrollTo from '../images/scroll-to-icon.svg';
 import ExtinguisherOnWall from '../images/extinguisher-on-wall.png';
 import MailIcon from '../images/mail-icon.svg'
 import PhoneIcon from "../images/phone-icon.svg";
-import {services} from "../constants/constants";
+import ScrollDownText from "../images/scroll-down-text.svg";
+import ScrollDownDot from "../images/scroll-down-dot.svg";
+import { services } from "../constants/constants";
 
 import "./Home.scss";
 
@@ -36,7 +38,7 @@ const IndexPage = () => {
         aboutRef.current.scrollIntoView();
     }
 
-  return (
+    return (
       <Layout scrollToContact={scrollToContact} scrollToAbout={scrollToAbout}>
             <Row as='header' className='header'>
                 <Col xs={6} as='h1' className='header__text-wrap'>
@@ -47,8 +49,8 @@ const IndexPage = () => {
                     </div>
                 </Col>
                 <Col className='images' xs={6}>
-                    <img className='image image--extinguisher-sign' src={Extinguisher} alt='extinguisher' />
-                    <img className='image image--green-sign' src={GreenSign} alt='green sign' />
+                    <img className='d-none d-lg-block image image--extinguisher-sign' src={Extinguisher} alt='extinguisher' />
+                    <img className='d-none d-lg-block image image--green-sign' src={GreenSign} alt='green sign' />
                     <img className='image image--red-sign' src={RedSign} alt="red sign" />
                 </Col>
                 <Col xs={6} className='header--background'>
@@ -64,20 +66,23 @@ const IndexPage = () => {
           <Row as='section'>
               <Col className='subheading' xs={12}>
                   <p className='subheading__text'>Zapewniamy najwyższe standardy z zakresu <br /> bezpieczeństwa pożarowego i BHP</p>
-                  <button><img src={ScrollTo} alt='scroll down icon' /></button>
+                  <button className='scroll-down'>
+                      <img className='scroll-down__text' src={ScrollDownText} alt='scroll down text' />
+                      <img className='scroll-down__dot' src={ScrollDownDot} alt='scroll down dot' />
+                  </button>
               </Col>
           </Row>
 
 
           <Row as='section' className='services'>
-              <Col xs={6} as='h2' className='services__text-wrap'>
+              <Col xs={12} lg={6} as='h2' className='services__text-wrap'>
                   <div className='services__text'>
                       <span>Zakres</span>
                       <span>naszych</span>
                       <span>usług</span>
                   </div>
               </Col>
-              <Col xs={6} className='services--background'>
+              <Col xs={12} lg={6} className='services--background'>
                   <div className='header__text'>
                       <span>Zakres</span>
                       <span>naszych</span>
@@ -85,7 +90,7 @@ const IndexPage = () => {
                   </div>
               </Col>
 
-              <Col className='services__list' xs={6}>
+              <Col className='services__list' xs={12} lg={6}>
                   {services.map((service, idx) => {
                       const uniqueKey = service.title + idx;
 
@@ -101,10 +106,10 @@ const IndexPage = () => {
           </Row>
 
           <Row ref={aboutRef} className='about' as='section'>
-              <Col className='ps-0' xs={6}>
+              <Col className='ps-0 pe-0 pe-lg-3' xs={12} lg={6}>
                   <img src={ExtinguisherOnWall} alt='extinguisher on wall' />
               </Col>
-              <Col className='about__text' xs={6}>
+              <Col className='about__text' xs={12} lg={6}>
                   <h4 className='about__heading'>O firmie</h4>
                   <p className='about__paragraph'>Interpoż działa prężnie od 2019 roku,  firmata została stworzona z pasji przez ekspertów powiązanych z daną dziedziną wieloletnim doświadczeniem. </p>
                   <p className='about__paragraph'>Jako firma jak i specjaliści zapewniamy największy standard usług w zależności od potrzeb, wyżej wymienione zakresy naszego działania mogą być elastycznie modyfikowane w zależności co Państwo potrzebują.</p>
@@ -114,10 +119,10 @@ const IndexPage = () => {
           </Row>
 
           <Row ref={contactRef} as='section' className='contact'>
-              <Col className='contact__heading' xs={6} as='h5'>Kontakt</Col>
-              <Col className='contact__content' xs={6}>
+              <Col className='contact__heading' xs={12} lg={6} as='h5'>Kontakt</Col>
+              <Col className='contact__content' xs={12} lg={6}>
                   <div className='d-flex flex-column'>
-                      <p className='contact__info'>Jeśli masz więcej pytań na temat usług zostaw nam swoje dane <br /> kontaktowe, oddzwonimy i chętnie odpowiemy na Twoje pytania.</p>
+                      <p className='contact__info'>Jeśli masz więcej pytań na temat usług zostaw nam swoje dane <br className='d-none d-xxl-block' /> kontaktowe, oddzwonimy i chętnie odpowiemy na Twoje pytania.</p>
                       <a className='contact__anchor' href='tel:+48691511756'>
                           <img src={PhoneIcon} alt='phone icon' /> 691-511-756
                       </a>

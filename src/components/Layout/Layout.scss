@@ -1,7 +1,56 @@
 @import '../../styles/main';
 
+.burger {
+    display: flex;
+    flex-direction: column;
+    width: 46px;
+    cursor: pointer;
+    margin-left: auto;
+
+   span{
+    background: $black-color;
+    border-radius: 10px;
+    height: 4px;
+    margin: 5px 0;
+    transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+
+  span:nth-of-type(1){
+    width: 50%;
+  }
+
+  span:nth-of-type(2){
+    width: 100%;
+  }
+
+  span:nth-of-type(3){
+    width: 75%;
+  }
+
+  &.open span:nth-of-type(1){
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(5px,2px)
+  }
+
+  &.open span:nth-of-type(2){
+    transform-origin: top;
+    transform: rotatez(-45deg)
+  }
+
+  &.open span:nth-of-type(3){
+    transform-origin:bottom;
+    width:50%;
+    transform: translate(18px,-8px) rotatez(45deg);
+  }
+}
+
 .navbar {
-  padding: 85px 80px 0 80px;
+  padding: 24px 22px 0 22px;
+
+  @media (min-width: $lg) {
+    padding: 85px 80px 0 80px;
+  }
 }
 
 .navbar-nav {
@@ -18,12 +67,24 @@
 .footer {
   display: flex;
   flex-wrap: wrap;
-  padding: 96px 80px;
+  padding: 40px 24px 50px 24px;
   color: $white-color;
   background-color: $black-color;
 
+  img {
+    max-width: 166px;
+  }
+
+  @media (min-width: $lg) {
+    padding: 96px 80px;
+  }
+
   &__list {
-    padding-left: 73px;
+    padding-top: 20px;
+
+    @media (min-width: $lg) {
+      padding-left: 73px;
+    }
 
     li {
       font-size: $font-size-sm;

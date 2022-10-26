@@ -1,0 +1,36 @@
+@keyframes floatImgLeft {
+  from {transform: translateY(-50%)}
+  to {transform:  translateY(-60%)}
+};
+
+@keyframes floatImgRight {
+  from {transform: translateY(0%)}
+  to {transform:  translateY(-10%)}
+};
+
+@keyframes floatImgUp {
+  from {transform: translateY(0%)}
+  to {transform:  translateY(-5%)}
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes slideDown {
+  from {bottom: 100%; transform: translateY(50%)}
+  to {bottom: 0}
+}
