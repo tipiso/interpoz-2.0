@@ -7,6 +7,10 @@
   background-color: $red-color;
   font-size: $font-size-sm;
   color: $white-color;
+
+  &:hover {
+    color: $white-color;
+  }
 }
 
 .header {

@@ -16,6 +16,8 @@ import ScrollDownDot from "../images/scroll-down-dot.svg";
 import { services } from "../constants/constants";
 
 import "./Home.scss";
+import NavItem from "react-bootstrap/NavItem";
+import Offer from "../images/offer.pdf";
 
 const IndexPage = () => {
     const [openedCollapse, setOpenedCollapse] = useState({});
@@ -114,7 +116,7 @@ const IndexPage = () => {
                   <p className='about__paragraph'>Interpoż działa prężnie od 2019 roku,  firmata została stworzona z pasji przez ekspertów powiązanych z daną dziedziną wieloletnim doświadczeniem. </p>
                   <p className='about__paragraph'>Jako firma jak i specjaliści zapewniamy największy standard usług w zależności od potrzeb, wyżej wymienione zakresy naszego działania mogą być elastycznie modyfikowane w zależności co Państwo potrzebują.</p>
                   <p className='about__paragraph'>Poniżej przedstawiamy plik zawierający dane dotyczące oferowanych przykładowych usług jakie możemy Państwu zapewnić, w razie niepewności zapraszamy do kontaktu.</p>
-                  <button className='red-btn'>Oferta</button>
+                  <a className='red-btn' href={Offer} target="_blank" rel='noreferrer'>Oferta</a>
               </Col>
           </Row>
 
