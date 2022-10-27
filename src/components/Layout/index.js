@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from 'react';
-import { motion } from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -8,7 +8,8 @@ import NavbarBrand from "react-bootstrap/NavbarBrand";
 import NavItem from "react-bootstrap/NavItem";
 import Nav from 'react-bootstrap/Nav';
 
-import { returnElVariants } from "../../constants/constants";
+import { returnElVariants, slideInNav } from "../../constants/constants";
+import useWindowDimensions from "./useWindowDimensions";
 import Logo from '../../images/logo.svg';
 import MobileLogo from "../../images/mobile-top-logo.svg"
 import FooterLogo from "../../images/footer-logo.svg";
@@ -18,6 +19,21 @@ import "./Layout.scss";
 
 export default function Layout({ children, scrollToAbout, scrollToContact }) {
     const [open, setOpen] = useState(false);
+    const windowDimensions = useWindowDimensions();
+    const isMobileLayout = windowDimensions.width <= 992;
+
+    const toggleOpen = () => {
+        setOpen(!open);
+    }
+
+    const handleScroll = (scrollToFunc) => () => {
+        if(isMobileLayout) {
+            scrollToFunc();
+            setOpen(false);
+        }else {
+            scrollToFunc();
+        }
+    }
 
     return (
         <motion.div
@@ -34,11 +50,41 @@ export default function Layout({ children, scrollToAbout, scrollToContact }) {
                     </picture>
                 </NavbarBrand>
 
-                <button onClick={() => setOpen(!open)} className={`burger d-lg-none ${open ? 'open' : ''}`}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                {isMobileLayout && (
+                    <>
+                        <button onClick={toggleOpen} className={`burger ${open ? 'open' : ''}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+
+                            <AnimatePresence>
+                                {open && <motion.div
+                                    className='mobile-navigation navbar-nav'
+                                    initial="exit"
+                                    animate="enter"
+                                    exit="exit"
+                                    variants={slideInNav}
+                                >
+                                    <header className='mobile-navigation__header'>
+                                        <picture>
+                                            <source srcSet={Logo} media='(min-width: 992px)' />
+                                            <img srcSet={MobileLogo} alt='Logo icon' />
+                                        </picture>
+                                        <button onClick={toggleOpen} className={`burger ${open ? 'open' : ''}`}>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </button>
+                                    </header>
+                                    <NavItem as='button' onClick={handleScroll(scrollToAbout)}>O firmie</NavItem>
+                                    <NavItem as='button' onClick={handleScroll(scrollToContact)}>Kontakt</NavItem>
+                                    <NavItem as='a' href={Offer} target="_blank" rel='noreferrer' className='red-btn'>Oferta</NavItem>
+                                </motion.div>}
+                            </AnimatePresence>
+                    </>
+                    )}
 
                 <Nav className='d-none d-lg-flex' navbar>
                     <NavItem as='button' onClick={scrollToAbout}>O firmie</NavItem>

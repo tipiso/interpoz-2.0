@@ -1,4 +1,38 @@
 @import '../../styles/main';
+@import "../../styles/mixins";
+
+.mobile-navigation {
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  @include viewport-unit(height, 100vh);
+  z-index: 10;
+  background-color: $background-color;
+
+  &.navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $gray-color;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid $gray-color;
+  }
+}
 
 .burger {
     display: flex;
@@ -7,7 +41,7 @@
     cursor: pointer;
     margin-left: auto;
 
-   span{
+   span {
     background: $black-color;
     border-radius: 10px;
     height: 4px;

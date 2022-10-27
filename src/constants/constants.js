@@ -31,4 +31,9 @@ const returnElVariants = {
     enter: { opacity: 1, y: 0, transition },
 };
 
-export { services, returnElVariants };
+const slideInNav = {
+    exit: {  x: '100%', transition: {duration: .8, type: 'spring'} },
+    enter: { x: 0, transition: {duration: .8, delay: .3, type: 'spring'} },
+}
+
+export { services, returnElVariants, slideInNav };
