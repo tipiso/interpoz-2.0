@@ -17,10 +17,8 @@ import Offer from "../../images/offer.pdf"
 
 import "./Layout.scss";
 
-export default function Layout({ children, scrollToAbout, scrollToContact }) {
+export default function Layout({ children, scrollToAbout, scrollToContact, isMobileLayout }) {
     const [open, setOpen] = useState(false);
-    const windowDimensions = useWindowDimensions();
-    const isMobileLayout = windowDimensions.width <= 992;
 
     const toggleOpen = () => {
         setOpen(!open);
@@ -52,7 +50,7 @@ export default function Layout({ children, scrollToAbout, scrollToContact }) {
 
                 {isMobileLayout && (
                     <>
-                        <button onClick={toggleOpen} className={`burger ${open ? 'open' : ''}`}>
+                        <button aria-label='toggle mobile menu' onClick={toggleOpen} className={`burger ${open ? 'open' : ''}`}>
                             <span></span>
                             <span></span>
                             <span></span>
@@ -72,7 +70,7 @@ export default function Layout({ children, scrollToAbout, scrollToContact }) {
                                             <source srcSet={Logo} media='(min-width: 992px)' />
                                             <img srcSet={MobileLogo} alt='Logo icon' />
                                         </picture>
-                                        <button onClick={toggleOpen} className={`burger ${open ? 'open' : ''}`}>
+                                        <button aria-label='toggle mobile menu' onClick={toggleOpen} className={`burger ${open ? 'open' : ''}`}>
                                             <span></span>
                                             <span></span>
                                             <span></span>
@@ -99,7 +97,7 @@ export default function Layout({ children, scrollToAbout, scrollToContact }) {
 
             <footer className='footer'>
                 <Col xs={12} lg={5}>
-                    <img src={FooterLogo} alt='footer logo' />
+                    <img loading='lazy' src={FooterLogo} alt='footer logo' />
                     <ul className='footer__list'>
                         <li>Robert Bujny Interpoż</li>
                         <li>ul. Zdrojowa 32</li>
