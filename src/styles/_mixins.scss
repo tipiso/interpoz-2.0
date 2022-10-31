@@ -69,7 +69,7 @@
       $device-query: "#{$device-query} and (device-width: #{$device-width})";
       $device-query: "#{$device-query} and (device-height: #{$device-height})";
 
-      $percent: $value / ($value * 0 + 1);
+      $percent: calc($value / ($value * 0 + 1#{$unit}));
 
       $percent-width: calc($device-width * $percent / 100);
       $percent-height: calc($device-height * $percent / 100);

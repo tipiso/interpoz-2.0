@@ -1,6 +1,6 @@
 import * as React from "react";
-import { useState, useRef } from "react";
 import Col from "react-bootstrap/Col";
+import { useState, useRef } from "react";
 import { Collapse, Row } from "react-bootstrap";
 
 import Layout from "../components/Layout";
@@ -111,12 +111,12 @@ const IndexPage = () => {
 
             return (
               <div className="service" key={uniqueKey}>
-                <span
+                <button
                   className="service__title"
                   onClick={() => toggleCollapse(uniqueKey)}
                 >
                   {service.title}
-                </span>
+                </button>
                 <Collapse
                   key={uniqueKey + "-collapse"}
                   in={openedCollapse[uniqueKey]}
@@ -140,7 +140,7 @@ const IndexPage = () => {
           />
         </Col>
         <Col className="about__text" xs={12} lg={6}>
-          <h4 className="about__heading">O firmie</h4>
+          <h3 className="about__heading">O firmie</h3>
           <p className="about__paragraph">
             Interpoż działa prężnie od 2019 roku, firmata została stworzona z
             pasji przez ekspertów powiązanych z daną dziedziną wieloletnim
@@ -164,7 +164,7 @@ const IndexPage = () => {
       </Row>
 
       <Row ref={contactRef} as="section" className="contact">
-        <Col className="contact__heading" xs={12} lg={6} as="h5">
+        <Col className="contact__heading" xs={12} lg={6} as="h4">
           Kontakt
         </Col>
         <Col className="contact__content" xs={12} lg={6}>

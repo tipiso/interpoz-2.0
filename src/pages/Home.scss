@@ -58,6 +58,7 @@
 
     &--extinguisher-sign {
       z-index: 4;
+      width: 80%;
       top: -160px;
       @include imgAnimation(floatImgUp);
       animation-direction: alternate-reverse;
@@ -144,6 +145,7 @@
     cursor: pointer;
     font-weight: 700;
     font-size: $font-size-lg;
+    color: $white-color;
   }
 
   &__content {
@@ -223,7 +225,7 @@
     font-weight: 700;
 
     @media (min-width: $lg) {
-      line-height: 254.8px;
+      line-height: 130%;
     }
   }
 
