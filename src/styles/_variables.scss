@@ -1,11 +1,11 @@
 $black-color: #222222;
-$red-color: #8B0000;
-$white-color: #FFFFFF;
-$gray-color: #CCCCCC;
+$red-color: #8b0000;
+$white-color: #ffffff;
+$gray-color: #cccccc;
 
-$background-color: #F3F3F3;
+$background-color: #f3f3f3;
 
-$font-size-title: clamp(48px, 12vw,196px);
+$font-size-title: clamp(48px, 9vw, 166px);
 $font-size-lg: clamp(18px, 3vw, 32px);
 $font-size-md: clamp(18px, 3vw, 24px);
 $font-size-sm: clamp(16px, 2vw, 18px);
@@ -18,4 +18,5 @@ $lg: 992px;
 $xl: 1200px;
 $xxl: 1400p;
 
-$font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$font-family: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Helvetica Neue", Arial, sans-serif;

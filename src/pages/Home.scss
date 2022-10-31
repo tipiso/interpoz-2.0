@@ -20,8 +20,8 @@
 
   @include bgHeadingText($black-color, $white-color);
 
-  @media (min-width: $lg){
-    margin-top: 125px;
+  @media (min-width: $lg) {
+    margin-top: 80px;
   }
 
   // Images
@@ -41,7 +41,7 @@
       left: 50px;
       @include imgAnimation(floatImgRight);
 
-      @media (min-width: $lg){
+      @media (min-width: $lg) {
         width: auto;
         top: 25px;
         left: 275px;
@@ -72,7 +72,7 @@
   flex-wrap: wrap;
   padding: 50px 24px 80px 24px;
 
-  @media (min-width: $lg){
+  @media (min-width: $lg) {
     padding: 80px 80px 80px;
   }
 
@@ -117,7 +117,7 @@
     }
   }
 
-  @media (min-width: $lg){
+  @media (min-width: $lg) {
     margin-top: 200px;
     @include bgHeadingText($red-color, $white-color);
   }
@@ -126,7 +126,7 @@
     padding-top: 50px;
     padding-bottom: 50px;
 
-    @media (min-width: $lg){
+    @media (min-width: $lg) {
       padding-top: 85px;
       padding-bottom: 0;
     }
@@ -148,18 +148,19 @@
 
   &__content {
     font-size: $font-size-sm;
+    max-width: 300px;
   }
 }
 
 .about {
-  @media (min-width: $lg){
+  @media (min-width: $lg) {
     padding-top: 200px;
   }
 
   img {
     width: 100%;
 
-    @media (min-width: $lg){
+    @media (min-width: $lg) {
       height: 100%;
     }
   }
@@ -198,13 +199,13 @@
   padding: 24px 24px 50px 24px;
   margin-bottom: 60px;
 
-  @media(min-width: $lg) {
+  @media (min-width: $lg) {
     margin-top: 400px;
     margin-bottom: 170px;
     padding: 85px 50px;
   }
 
-  @media (min-width: $xl){
+  @media (min-width: $xl) {
     padding: 85px 70px;
   }
 
