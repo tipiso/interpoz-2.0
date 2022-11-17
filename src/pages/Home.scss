@@ -7,6 +7,7 @@
   background-color: $red-color;
   font-size: $font-size-sm;
   color: $white-color;
+  -webkit-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
   border-color: $red-color;
   border-style: solid;
