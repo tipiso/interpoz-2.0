@@ -31,6 +31,10 @@
     height: 70px;
     width: 100%;
     border-bottom: 1px solid $gray-color;
+
+    img {
+      width: 26px;
+    }
   }
 }
 
@@ -81,8 +85,16 @@
 .navbar {
   padding: 24px 22px 0 22px;
 
+  .navbar-brand img {
+    width: 26px;
+  }
+
   @media (min-width: $lg) {
     padding: 64px 64px 0 64px;
+
+    .navbar-brand img {
+      width: auto;
+    }
   }
 }
 
