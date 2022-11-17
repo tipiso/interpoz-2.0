@@ -57,21 +57,21 @@ const IndexPage = () => {
           </div>
         </Col>
         <Col className="images" xs={6}>
-          {!isMobileLayout && (
-            <>
-              <img
-                className="d-none d-lg-block image image--extinguisher-sign"
-                src={Extinguisher}
-                alt="extinguisher"
-              />
-              <img
-                className="d-none d-lg-block image image--green-sign"
-                src={GreenSign}
-                alt="green sign"
-              />
-            </>
-          )}
-          <img className="image image--red-sign" src={RedSign} alt="red sign" />
+            {!isMobileLayout && (
+              <>
+                <img
+                  className="d-none d-lg-block image image--extinguisher-sign"
+                  src={Extinguisher}
+                  alt="extinguisher"
+                />
+                <img
+                  className="d-none d-lg-block image image--green-sign"
+                  src={GreenSign}
+                  alt="green sign"
+                />
+              </>
+            )}
+            <img className="image image--red-sign" src={RedSign} alt="red sign" />
         </Col>
       </Row>
 

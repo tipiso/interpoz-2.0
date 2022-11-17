@@ -95,6 +95,11 @@
   font-size: $font-size-sm;
   line-height: 24px;
   padding: 13px 36.5px;
+  transition: .3s ease-in-out;
+
+  &:not(.red-btn):hover{
+    transform: translateY(-2px);
+  }
 }
 
 .footer {

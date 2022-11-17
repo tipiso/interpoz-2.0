@@ -45,7 +45,7 @@ export default function Layout({
       variants={returnElVariants}
     >
       <Navbar>
-        <NavbarBrand href="/">
+        <NavbarBrand href="#">
           <picture>
             <source srcSet={Logo} media="(min-width: 992px)" />
             <img srcSet={MobileLogo} alt="Logo icon" />
