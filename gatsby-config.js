@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/interpoz-2.0",
   siteMetadata: {
     description:
       "BHP PRZEGLĄD URZĄDZEŃ PRZECIWPOŻAROWYCH DOKUMENTACJA DO KONTROLI PRZECIWPOŻAROWYCH INSTRUKCJE BEZPIECZEŃSTWA SZKOLENIA PRZECIWPOŻAROWE I BHP",
