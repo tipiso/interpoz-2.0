@@ -98,11 +98,19 @@
 .scroll-down {
   position: relative;
   margin-left: auto;
+  width: 30px;
+  height: 80px;
+
+  &__text {
+    position: absolute;
+    top: 0;
+    height: 80px;
+  }
 
   &__dot {
     position: absolute;
     border-radius: 50%;
-    left: 0;
+    left: 8px;
 
     animation: pulse 3s infinite, slideDown 3s alternate infinite;
   }
