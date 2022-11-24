@@ -78,8 +78,8 @@
 
   &.open span:nth-of-type(3) {
     transform-origin: bottom;
-    width: 50%;
-    transform: translate(15px, -6px) rotatez(45deg);
+    width: 14.85px;
+    transform: translate(17px, -5px) rotatez(45deg);
   }
 }
 
@@ -91,7 +91,7 @@
   }
 
   @media (min-width: $lg) {
-    padding: 64px 64px 0 64px;
+    padding: 16px 64px 0 64px;
 
     .navbar-brand img {
       width: auto;
@@ -119,9 +119,13 @@
 .footer {
   display: flex;
   flex-wrap: wrap;
-  padding: 40px 24px 50px 24px;
+  padding: 24px;
   color: $white-color;
   background-color: $black-color;
+
+  & > div {
+    padding: 0 15px;
+  }
 
   img {
     max-width: 166px;

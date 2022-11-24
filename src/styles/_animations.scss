@@ -31,7 +31,12 @@
 }
 
 @-webkit-keyframes slideDown {
-  from {bottom: 100%; transform: translateY(50%)}
+  from {bottom: 70px; transform: translateY(50%)}
+  to {bottom: 0}
+}
+
+@keyframes slideDown {
+  from {bottom: 70px; transform: translateY(50%)}
   to {bottom: 0}
 }
 
@@ -65,9 +70,4 @@
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
-}
-
-@keyframes slideDown {
-  from {bottom: 100%; transform: translateY(50%)}
-  to {bottom: 0}
 }
