@@ -12,6 +12,7 @@ import MailIcon from "../images/mail-icon.svg";
 import PhoneIcon from "../images/phone-icon.svg";
 import ScrollDownText from "../images/scroll-down-text.svg";
 import ScrollDownDot from "../images/scroll-down-dot.svg";
+import ChevronUp from '../images/chevron-up-icon.svg';
 import Offer from "../images/offer.pdf";
 import useWindowDimensions from "../components/Layout/useWindowDimensions";
 import { SEO } from "../components/SEO";
@@ -20,7 +21,7 @@ import { services } from "../constants/constants";
 import "./Home.scss";
 
 const IndexPage = () => {
-  const [openedCollapse, setOpenedCollapse] = useState({});
+  const [openedCollapse, setOpenedCollapse] = useState({"Szkolenia PPOŻ i BHP0": true});
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
   const windowDimensions = useWindowDimensions();
@@ -56,7 +57,7 @@ const IndexPage = () => {
             <span>i BHP</span>
           </div>
         </Col>
-        <Col className="images" xs={6}>
+        <Col className="images">
             {!isMobileLayout && (
               <>
                 <img
@@ -108,14 +109,16 @@ const IndexPage = () => {
         <Col className="services__list" xs={12} lg={6}>
           {services.map((service, idx) => {
             const uniqueKey = service.title + idx;
+            const titleClass = `service__title ${openedCollapse[uniqueKey] ? 'open' : ''} `
 
             return (
               <div className="service" key={uniqueKey}>
                 <button
-                  className="service__title"
+                  className={titleClass}
                   onClick={() => toggleCollapse(uniqueKey)}
                 >
                   {service.title}
+                  <img src={ChevronUp} alt="icon chevron up" />
                 </button>
                 <Collapse
                   key={uniqueKey + "-collapse"}

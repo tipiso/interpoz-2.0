@@ -32,12 +32,16 @@
 
   // Images
   .images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     padding: 0;
     z-index: 1;
+    max-width: 500px;
 
     @media (min-width: $xxl) {
-      transform: translateY(15%);
+      max-width: 700px;
     }
   }
 
@@ -46,33 +50,50 @@
 
     &--red-sign {
       z-index: 3;
-      width: 80%;
+      right: -20%;
+      bottom: 20px;
+      width: 200px;
       min-width: 180px;
       max-width: 430px;
-      top: -40px;
-      left: 30%;
       @include imgAnimation(floatImgRight);
 
-      @media (min-width: $lg) {
-        top: 10%;
+
+      @media (min-width: $sm) {
+        right: -20%;
+        bottom: 20px;
+        width: 300px;
+      }
+
+      @media (min-width: $xxl) {
+        width: 80%;
+        right: -20%;
       }
     }
 
     &--green-sign {
       z-index: 3;
-      top: 50%;
-      left: -100px;
-      transform: translateY(-50%);
+      left: 5%;
+      bottom: 20px;
+      width: 250px;
       @include imgAnimation(floatImgLeft);
+
+      @media (min-width: $xxl) {
+        width: auto;
+      }
     }
 
     &--extinguisher-sign {
       z-index: 4;
-      width: 80%;
+      bottom: -40px;
+      width: 400px;
       max-width: 480px;
-      top: -160px;
       @include imgAnimation(floatImgUp);
       animation-direction: alternate-reverse;
+
+      @media (min-width: $xxl) {
+        width: 80%;
+        bottom: 20px;
+      }
     }
   }
 }
@@ -82,7 +103,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 50px 24px 80px 24px;
+  padding: 24px 24px 80px 24px;
 
   @media (min-width: $lg) {
     padding: 80px 80px 80px;
@@ -90,7 +111,7 @@
 
   &__text {
     font-size: $font-size-lg;
-    line-height: 41.6px;
+    line-height: 130%;
     font-weight: 400;
   }
 }
@@ -119,22 +140,12 @@
 .services {
   position: relative;
   background-color: $red-color;
+  padding: 20px 0;
 
   @include bgHeadingText($red-color, $white-color);
 
-  @media (min-width: $xs) {
-    max-height: unset;
-    min-height: unset;
-
-    &__text-wrap {
-      max-height: unset;
-      min-height: unset;
-    }
-
-    &__text {
-      max-height: unset;
-      min-height: unset;
-    }
+  &__text-wrap {
+    padding-bottom: 40px;
   }
 
   @media (min-width: $lg) {
@@ -142,14 +153,15 @@
     @include bgHeadingText($red-color, $white-color);
   }
 
+
   &__list {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin: auto 0;
+    padding: 0;
 
     @media (min-width: $lg) {
-      padding-top: 85px;
-      padding-bottom: 0;
+      padding: 0 15px;
     }
+
   }
 }
 
@@ -161,11 +173,26 @@
   }
 
   &__title {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     font-weight: 700;
     font-size: $font-size-lg;
     color: $white-color;
     padding: 0;
+
+    &.open img {
+      transform: rotate(180deg);
+    }
+
+    img {
+      display: block;
+      margin-left: 8px;
+      width: 24px;
+      fill: $white-color;
+      color: $white-color;
+      transition: .2s ease-in-out;
+    }
   }
 
   &__content {
@@ -199,6 +226,7 @@
 
   &__heading {
     font-size: $font-size-title;
+    padding-bottom: 24px;
   }
 
   &__paragraph {
@@ -210,7 +238,7 @@
     padding-bottom: 16px;
 
     &:last-of-type {
-      padding-bottom: 32px;
+      padding-bottom: 40px;
     }
   }
 }
@@ -243,6 +271,7 @@
     font-size: $font-size-title;
     color: $white-color;
     font-weight: 700;
+    padding-bottom: 24px;
 
     @media (min-width: $lg) {
       line-height: 130%;
@@ -259,7 +288,7 @@
   &__info {
     font-size: $font-size-md;
     font-weight: 400;
-    line-height: 43.2px;
+    line-height: 130%;
     padding-bottom: 24px;
   }
 
